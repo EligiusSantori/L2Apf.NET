@@ -1,0 +1,1 @@
+Macro /login:macro_config.xml /global:true /auth:false

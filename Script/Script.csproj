@@ -1,0 +1,121 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{DD87002B-4604-41CA-887B-A919BD349357}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>L2Apf</RootNamespace>
+    <AssemblyName>Script</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>опубликовать\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="NLog, Version=2.0.1.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\NLog.2.0.1.2\lib\net45\NLog.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="Microsoft.CSharp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Exception\LoginFailException.cs" />
+    <Compile Include="Exception\PlayFailException.cs" />
+    <Compile Include="Exception\SyncTargetException.cs" />
+    <Compile Include="Server\Script\Result\Attack.cs" />
+    <Compile Include="Server\Script\Result\ChatMessage.cs" />
+    <Compile Include="Server\Script\Result\CreatureUpdated.cs" />
+    <Compile Include="Server\Script\Result\Die.cs" />
+    <Compile Include="Server\Script\Result\ItemInfo.cs" />
+    <Compile Include="Server\Script\Result\LoginFail.cs" />
+    <Compile Include="Server\Script\Result\LoggedOut.cs" />
+    <Compile Include="Server\Script\Result\PlayFail.cs" />
+    <Compile Include="Server\Script\Result\QuestionAsked.cs" />
+    <Compile Include="Server\Script\Result\SkillCanceled.cs" />
+    <Compile Include="Server\Script\Result\SkillLaunched.cs" />
+    <Compile Include="Server\Script\Result\SkillReused.cs" />
+    <Compile Include="Server\Script\Result\SkillStarted.cs" />
+    <Compile Include="Server\Script\State.cs" />
+    <Compile Include="Server\Script\Target.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Server\Script\Api.cs" />
+    <Compile Include="Server\Script\Result\ActionFailed.cs" />
+    <Compile Include="Server\Script\Result\EnterWorld.cs" />
+    <Compile Include="Server\Script\Result\FinishMoving.cs" />
+    <Compile Include="Server\Script\Result\GameConnected.cs" />
+    <Compile Include="Server\Script\Result\LoginConnected.cs" />
+    <Compile Include="Server\Script\Result\Result.cs" />
+    <Compile Include="Server\Script\Result\ServerSelected.cs" />
+    <Compile Include="Server\Script\Result\StartMoving.cs" />
+    <Compile Include="Server\Script\Result\TargetChanged.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Core\Core.csproj">
+      <Project>{7df47435-edd5-44b6-9ff3-d7ae3f9dce55}</Project>
+      <Name>Core</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5 %28x86 и x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>Клиентский профиль .NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

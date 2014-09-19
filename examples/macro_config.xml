@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<script>
+	<loginserver>
+		<address>127.0.0.1</address>
+		<port>2106</port>
+		<protocol>660</protocol>
+		<token>5f 3b 35 2e 5d 39 34 2d 33 31 3d 3d 2d 25 78 54 21 5e 5b 24 00</token>
+	</loginserver>
+	<gameserver>
+		<id>1</id>
+	</gameserver>
+	<account>
+		<login>test</login>
+		<password>123456</password>
+		<character>test</character>
+	</account>
+</script>

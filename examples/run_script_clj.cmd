@@ -1,0 +1,1 @@
+Clojure.Main %1

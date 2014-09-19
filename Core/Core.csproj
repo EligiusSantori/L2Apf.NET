@@ -1,0 +1,240 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{7DF47435-EDD5-44B6-9FF3-D7AE3F9DCE55}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>L2Apf</RootNamespace>
+    <AssemblyName>Core</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Mono.Security">
+      <HintPath>..\packages\Mono.Security.3.2.3.0\lib\net45\Mono.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="NLog, Version=2.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\NLog.2.0.1.2\lib\net45\NLog.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Security" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Library\Blowfish.cs" />
+    <Compile Include="Library\Random.cs" />
+    <Compile Include="Packet\Client\GameGuardReply.cs" />
+    <Compile Include="Packet\Server\ActionFailed.cs" />
+    <Compile Include="Packet\Server\ChangeMoveType.cs" />
+    <Compile Include="Packet\Server\ChangeWaitType.cs" />
+    <Compile Include="Packet\Server\GameGuardVerfy.cs" />
+    <Compile Include="Packet\Server\Logout.cs" />
+    <Compile Include="Packet\Server\PartySmallWindowDeleteAll.cs" />
+    <Compile Include="Packet\Server\Sunrise.cs" />
+    <Compile Include="Packet\Server\Sunset.cs" />
+    <Compile Include="Server\Game\Animate.cs" />
+    <Compile Include="Server\Game\Api.cs" />
+    <Compile Include="Server\Game\ItemRemove.cs" />
+    <Compile Include="Server\Game\Network.cs" />
+    <Compile Include="Library\Exception\SequenceException.cs" />
+    <Compile Include="Library\Exception\StateException.cs" />
+    <Compile Include="Server\Game\Crypt.cs" />
+    <Compile Include="Library\Extensions.cs" />
+    <Compile Include="Library\Interval.cs" />
+    <Compile Include="Library\Point.cs" />
+    <Compile Include="Library\Polygon.cs" />
+    <Compile Include="Lineage\Action.cs" />
+    <Compile Include="Lineage\Answer.cs" />
+    <Compile Include="Lineage\Channel.cs" />
+    <Compile Include="Lineage\DayTime.cs" />
+    <Compile Include="Lineage\FaceType.cs" />
+    <Compile Include="Lineage\Gender.cs" />
+    <Compile Include="Lineage\HairColor.cs" />
+    <Compile Include="Lineage\HairStyle.cs" />
+    <Compile Include="Lineage\MountType.cs" />
+    <Compile Include="Lineage\MoveType.cs" />
+    <Compile Include="Lineage\PartyLoot.cs" />
+    <Compile Include="Lineage\PrivateStore.cs" />
+    <Compile Include="Lineage\Question.cs" />
+    <Compile Include="Lineage\ReturnPoint.cs" />
+    <Compile Include="Lineage\SignsSky.cs" />
+    <Compile Include="Lineage\SocialAction.cs" />
+    <Compile Include="Lineage\State.cs" />
+    <Compile Include="Lineage\UserCommand.cs" />
+    <Compile Include="Lineage\WaitType.cs" />
+    <Compile Include="Model\Account.cs" />
+    <Compile Include="Model\Ally.cs" />
+    <Compile Include="Model\Casting.cs" />
+    <Compile Include="Model\Castle.cs" />
+    <Compile Include="Model\Character.cs" />
+    <Compile Include="Model\Clan.cs" />
+    <Compile Include="Model\Clanhall.cs" />
+    <Compile Include="Model\ClanMember.cs" />
+    <Compile Include="Model\Creature.cs" />
+    <Compile Include="Model\Equipment.cs" />
+    <Compile Include="Model\GameServer.cs" />
+    <Compile Include="Model\Item.cs" />
+    <Compile Include="Model\LoginServer.cs" />
+    <Compile Include="Model\Movement.cs" />
+    <Compile Include="Model\Npc.cs" />
+    <Compile Include="Model\Object.cs" />
+    <Compile Include="Model\OtherPlayer.cs" />
+    <Compile Include="Model\Party.cs" />
+    <Compile Include="Model\Player.cs" />
+    <Compile Include="Model\Satchel.cs" />
+    <Compile Include="Model\Shortcut.cs" />
+    <Compile Include="Model\Skill.cs" />
+    <Compile Include="Model\Symbol.cs" />
+    <Compile Include="Model\World.cs" />
+    <Compile Include="Packet\Client\Action.cs" />
+    <Compile Include="Packet\Client\Appearing.cs" />
+    <Compile Include="Packet\Client\AttackRequest.cs" />
+    <Compile Include="Packet\Client\ChangeMoveType2.cs" />
+    <Compile Include="Packet\Client\ChangeWaitType2.cs" />
+    <Compile Include="Packet\Client\CharacterSelected.cs" />
+    <Compile Include="Packet\Client\EnterWorld.cs" />
+    <Compile Include="Packet\Client\GameGuardAuth.cs" />
+    <Compile Include="Packet\Client\Logout.cs" />
+    <Compile Include="Packet\Client\MoveBackwardToLocation.cs" />
+    <Compile Include="Packet\Client\ProtocolVersion.cs" />
+    <Compile Include="Packet\Client\RefreshManorList.cs" />
+    <Compile Include="Packet\Client\RefreshQuestList.cs" />
+    <Compile Include="Packet\Client\RefreshSkillList.cs" />
+    <Compile Include="Packet\Client\RequestActionUse.cs" />
+    <Compile Include="Packet\Client\RequestAnswerFriendInvite.cs" />
+    <Compile Include="Packet\Client\RequestAnswerJoinAlly.cs" />
+    <Compile Include="Packet\Client\RequestAnswerJoinParty.cs" />
+    <Compile Include="Packet\Client\RequestAnswerJoinPledge.cs" />
+    <Compile Include="Packet\Client\RequestAuthLogin.cs" />
+    <Compile Include="Packet\Client\RequestBypassToServer.cs" />
+    <Compile Include="Packet\Client\RequestCrystallizeItem.cs" />
+    <Compile Include="Packet\Client\RequestDestroyItem.cs" />
+    <Compile Include="Packet\Client\RequestDropItem.cs" />
+    <Compile Include="Packet\Client\RequestEvaluate.cs" />
+    <Compile Include="Packet\Client\RequestFriendDel.cs" />
+    <Compile Include="Packet\Client\RequestFriendInvite.cs" />
+    <Compile Include="Packet\Client\RequestGmList.cs" />
+    <Compile Include="Packet\Client\RequestJoinParty.cs" />
+    <Compile Include="Packet\Client\RequestMagicSkillUse.cs" />
+    <Compile Include="Packet\Client\RequestOustPartyMember.cs" />
+    <Compile Include="Packet\Client\RequestRestart.cs" />
+    <Compile Include="Packet\Client\RequestReturnPoint.cs" />
+    <Compile Include="Packet\Client\RequestSendFriendMsg.cs" />
+    <Compile Include="Packet\Client\RequestServerList.cs" />
+    <Compile Include="Packet\Client\RequestServerLogin.cs" />
+    <Compile Include="Packet\Client\RequestSocialAction.cs" />
+    <Compile Include="Packet\Client\RequestTargetCanceld.cs" />
+    <Compile Include="Packet\Client\RequestUserCommand.cs" />
+    <Compile Include="Packet\Client\RequestWithDrawalParty.cs" />
+    <Compile Include="Packet\Client\Say2.cs" />
+    <Compile Include="Packet\Client\TradeRequest.cs" />
+    <Compile Include="Packet\Client\UseItem.cs" />
+    <Compile Include="Packet\Client\ValidateAuthLogin.cs" />
+    <Compile Include="Packet\Client\ValidatePosition.cs" />
+    <Compile Include="Packet\Packet.cs" />
+    <Compile Include="Packet\Reader.cs" />
+    <Compile Include="Packet\Server\AllyCrest.cs" />
+    <Compile Include="Packet\Server\AskJoinAlly.cs" />
+    <Compile Include="Packet\Server\AskJoinFriend.cs" />
+    <Compile Include="Packet\Server\AskJoinParty.cs" />
+    <Compile Include="Packet\Server\AskJoinPledge.cs" />
+    <Compile Include="Packet\Server\Attack.cs" />
+    <Compile Include="Packet\Server\AutoAttackStart.cs" />
+    <Compile Include="Packet\Server\AutoAttackStop.cs" />
+    <Compile Include="Packet\Server\CharInfo.cs" />
+    <Compile Include="Packet\Server\CharMoveToLocation.cs" />
+    <Compile Include="Packet\Server\CharSelected.cs" />
+    <Compile Include="Packet\Server\CharSelectInfo.cs" />
+    <Compile Include="Packet\Server\CreatureSay.cs" />
+    <Compile Include="Packet\Server\DeleteObject.cs" />
+    <Compile Include="Packet\Server\Dice.cs" />
+    <Compile Include="Packet\Server\Die.cs" />
+    <Compile Include="Packet\Server\DropItem.cs" />
+    <Compile Include="Packet\Server\Earthquake.cs" />
+    <Compile Include="Packet\Server\FriendRecvMsg.cs" />
+    <Compile Include="Packet\Server\GameServerList.cs" />
+    <Compile Include="Packet\Server\GetItem.cs" />
+    <Compile Include="Packet\Server\HennaInfo.cs" />
+    <Compile Include="Packet\Server\Init.cs" />
+    <Compile Include="Packet\Server\InventoryUpdate.cs" />
+    <Compile Include="Packet\Server\ItemList.cs" />
+    <Compile Include="Packet\Server\KeyPacket.cs" />
+    <Compile Include="Packet\Server\LoginFail.cs" />
+    <Compile Include="Packet\Server\LoginOk.cs" />
+    <Compile Include="Packet\Server\MagicSkillCanceld.cs" />
+    <Compile Include="Packet\Server\MagicSkillLaunched.cs" />
+    <Compile Include="Packet\Server\MagicSkillUser.cs" />
+    <Compile Include="Packet\Server\MoveToPawn.cs" />
+    <Compile Include="Packet\Server\MyTargetSelected.cs" />
+    <Compile Include="Packet\Server\NpcHtmlMessage.cs" />
+    <Compile Include="Packet\Server\NpcInfo.cs" />
+    <Compile Include="Packet\Server\PartyMemberPosition.cs" />
+    <Compile Include="Packet\Server\PartySmallWindowAdd.cs" />
+    <Compile Include="Packet\Server\PartySmallWindowAll.cs" />
+    <Compile Include="Packet\Server\PartySmallWindowDelete.cs" />
+    <Compile Include="Packet\Server\PartySmallWindowUpdate.cs" />
+    <Compile Include="Packet\Server\PlayFail.cs" />
+    <Compile Include="Packet\Server\PlayOk.cs" />
+    <Compile Include="Packet\Server\PledgeCrest.cs" />
+    <Compile Include="Packet\Server\PledgeInfo.cs" />
+    <Compile Include="Packet\Server\PledgeShowInfoUpdate.cs" />
+    <Compile Include="Packet\Server\PledgeShowMemberListAll.cs" />
+    <Compile Include="Packet\Server\RestartResponse.cs" />
+    <Compile Include="Packet\Server\Revive.cs" />
+    <Compile Include="Packet\Server\ShortcutInit.cs" />
+    <Compile Include="Packet\Server\SignsSky.cs" />
+    <Compile Include="Packet\Server\SkillList.cs" />
+    <Compile Include="Packet\Server\SocialAction.cs" />
+    <Compile Include="Packet\Server\SpawnItem.cs" />
+    <Compile Include="Packet\Server\StatusUpdate.cs" />
+    <Compile Include="Packet\Server\StopMove.cs" />
+    <Compile Include="Packet\Server\SystemMessage.cs" />
+    <Compile Include="Packet\Server\TargetSelected.cs" />
+    <Compile Include="Packet\Server\TargetUnselected.cs" />
+    <Compile Include="Packet\Server\TeleportToLocation.cs" />
+    <Compile Include="Packet\Server\UserInfo.cs" />
+    <Compile Include="Packet\Server\ValidateLocation.cs" />
+    <Compile Include="Packet\Server\ValidateLocationInVehicle.cs" />
+    <Compile Include="Packet\Utils.cs" />
+    <Compile Include="Packet\Writer.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Server\Game\ItemUpdate.cs" />
+    <Compile Include="Server\Game\State.cs" />
+    <Compile Include="Server\Login\Api.cs" />
+    <Compile Include="Server\Login\Network.cs" />
+    <Compile Include="Server\Login\State.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
